@@ -1,24 +1,15 @@
 public class App {
-    public static Integer max(Integer a, Integer b, Integer c) {
-        return a.compareTo(b) > 0 ? (a.compareTo(c) > 0 ? a : c) : (b.compareTo(c) > 0 ? b : c);
-    }
-
-    public static Float max(Float a, Float b, Float c) {
-        return a.compareTo(b) > 0 ? (a.compareTo(c) > 0 ? a : c) : (b.compareTo(c) > 0 ? b : c);
-    }
-
-    public static String max(String a, String b, String c) {
-        return a.compareTo(b) > 0 ? (a.compareTo(c) > 0 ? a : c) : (b.compareTo(c) > 0 ? b : c);
-    }
 
     public static void main(String[] args) throws Exception {
-        System.out.println("TC 1");
-        System.out.println("Max of Peach, Apple, Banana: " + max("Peach", "Apple", "Banana"));
+        Max<Integer> intObj = new Max<Integer>(20, 15, 25);
+        System.out.println("Max of " + intObj.a + ", " + intObj.b + ", " + intObj.c + ": " + intObj.getMax());
 
-        System.out.println("TC 2");
-        System.out.println("Max of Banana, Peach, Apple: " + max("Banana", "Peach", "Apple"));
+        Max<Float> floatObj = new Max<Float>(20.2F, 20.3F, 20.1F);
+        System.out.println(
+                "Max of " + floatObj.a + ", " + floatObj.b + ", " + floatObj.c + ": " + floatObj.getMax());
 
-        System.out.println("TC 3");
-        System.out.println("Max of Banana, Apple, Peach: " + max("Banana", "Apple", "Peach"));
+        Max<String> stringObj = new Max<String>("Apple", "Banana", "Peach");
+        System.out.println(
+                "Max of " + stringObj.a + ", " + stringObj.b + ", " + stringObj.c + ": " + stringObj.getMax());
     }
 }
