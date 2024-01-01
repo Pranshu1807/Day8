@@ -19,4 +19,13 @@ public class Max<T extends Comparable<T>> {
         Arrays.sort(values);
         return values[values.length - 1];
     }
+
+    public void printMax() {
+        T max = getMax();
+
+        if (max == null)
+            System.out.println("No number entered");
+        else
+            System.out.println("Max of given values: " + max);
+    }
 }
