@@ -1,19 +1,22 @@
-public class Max<T extends Comparable<T>> {
-    public T a;
-    public T b;
-    public T c;
+import java.util.Arrays;
 
-    Max(T a, T b, T c) {
-        this.a = a;
-        this.b = b;
-        this.c = c;
+public class Max<T extends Comparable<T>> {
+    public T[] values;
+
+    Max(T... values) {
+        this.values = values;
     }
 
     public T getMax() {
-        return Max.getMax(a, b, c);
+        return Max.getMax(values);
     }
 
-    public static <T extends Comparable<T>> T getMax(T a, T b, T c) {
-        return a.compareTo(b) > 0 ? (a.compareTo(c) > 0 ? a : c) : (b.compareTo(c) > 0 ? b : c);
+    public static <T extends Comparable<T>> T getMax(T... values) {
+        if (values == null || values.length == 0) {
+            return null;
+        }
+
+        Arrays.sort(values);
+        return values[values.length - 1];
     }
 }

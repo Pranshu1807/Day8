@@ -1,15 +1,15 @@
 public class App {
 
     public static void main(String[] args) throws Exception {
-        Max<Integer> intObj = new Max<Integer>(20, 15, 25);
-        System.out.println("Max of " + intObj.a + ", " + intObj.b + ", " + intObj.c + ": " + intObj.getMax());
+        Max<Integer> intObj = new Max<Integer>(20, 15, 25, 50, 10);
+        System.out.println("Max among the values: " + intObj.getMax());
 
-        Max<Float> floatObj = new Max<Float>(20.2F, 20.3F, 20.1F);
+        Max<Float> floatObj = new Max<Float>(20.2F, 20.3F, 20.1F, 1.1F, 3.3F);
         System.out.println(
-                "Max of " + floatObj.a + ", " + floatObj.b + ", " + floatObj.c + ": " + floatObj.getMax());
+                "Max among the values :" + floatObj.getMax());
 
-        Max<String> stringObj = new Max<String>("Apple", "Banana", "Peach");
+        Max<String> stringObj = new Max<String>("Apple", "Banana", "Peach", "Guava", "Grapes");
         System.out.println(
-                "Max of " + stringObj.a + ", " + stringObj.b + ", " + stringObj.c + ": " + stringObj.getMax());
+                "Max among the values: " + stringObj.getMax());
     }
 }
